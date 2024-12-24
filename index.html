@@ -7,7 +7,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://kit.fontawesome.com/6a972cf3a7.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body { font-family: 'Prompt', sans-serif; }
@@ -28,14 +27,13 @@
             <input type="text" id="name" name="name" class="form-control" placeholder="ระบุ..ชื่อ สกุล" required>
           </div>
           <div class="form-group mb-3">
-            <label for="email" class="form-label">ราคา*</label>
-            <input type="text" id="email" name="email" class="form-control" placeholder="ระบุราคารวมของผู้ป่วยรายนี้" required>
+            <label for="price" class="form-label">ราคา*</label>
+            <input type="text" id="price" name="price" class="form-control" placeholder="ระบุราคารวมของผู้ป่วยรายนี้" required>
           </div>
           <div class="form-group mb-3">
-            <label for="message" class="form-label">Labที่ส่ง*</label>
-            <textarea id="message" name="message" class="form-control" placeholder="ระบุชื่อ Lab ที่ส่งทั้งหมด" rows="2"></textarea>
+            <label for="lab" class="form-label">Labที่ส่ง*</label>
+            <textarea id="lab" name="lab" class="form-control" placeholder="ระบุชื่อ Lab ที่ส่งทั้งหมด" rows="2"></textarea>
           </div>
-
           <div class="form-group">
             <label for="uploadFile">อัปโหลดไฟล์*</label>
             <input type="file" class="form-control" name="uploadfile" id="uploadfile" required>
@@ -52,7 +50,7 @@
     function handleFormSubmit(event) {
       event.preventDefault(); // Prevent form from submitting normally
       var formData = new FormData(document.getElementById("myForm"));
-      
+
       $.LoadingOverlay("show", {
         image: "",
         fontawesome: "fa fa-cog fa-spin",
