@@ -15,8 +15,17 @@
 <body>
     <!-- ป้องกันการคลิกขวาในหน้า -->
     <script>
+        // ป้องกันเมนูคลิกขวาในหน้า
         document.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // ป้องกันเมนูคลิกขวา
+            e.preventDefault();
+        });
+
+        // ส่งคำสั่งไปยัง iframe เมื่อเกิดการคลิกขวา
+        window.addEventListener('load', function() {
+            var iframe = document.querySelector('iframe');
+            iframe.contentWindow.document.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // ป้องกันเมนูคลิกขวาใน iframe
+            });
         });
     </script>
 
