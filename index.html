@@ -10,19 +10,21 @@
             height: 100vh;
             border: none;
         }
+        /* สไตล์ overlay ที่โปร่งแสงและไม่บล็อกการคลิก */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1); /* โปร่งแสง */
             z-index: 10;
+            pointer-events: none; /* ไม่บล็อกการคลิก */
         }
     </style>
 </head>
-<body oncontextmenu="return false">
-    <!-- Overlay ที่ปิดการคลิกขวา -->
+<body oncontextmenu="return false;">
+    <!-- Overlay ที่ปิดการคลิกขวา แต่ไม่บล็อกการคลิกใน iframe -->
     <div class="overlay"></div>
     <iframe src="https://script.google.com/macros/s/AKfycbzdygdgnavLHCLOS38TgvSKLfyFFXVtWJHrfis74WF7jDf1rLUX-vWWrVofH9hXfeV4zw/exec"></iframe>
 </body>
