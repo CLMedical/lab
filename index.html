@@ -10,25 +10,20 @@
             height: 100vh;
             border: none;
         }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 10;
+        }
     </style>
 </head>
-<body>
-    <!-- ป้องกันการคลิกขวาในหน้า -->
-    <script>
-        // ป้องกันเมนูคลิกขวาในหน้า
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        // ส่งคำสั่งไปยัง iframe เมื่อเกิดการคลิกขวา
-        window.addEventListener('load', function() {
-            var iframe = document.querySelector('iframe');
-            iframe.contentWindow.document.addEventListener('contextmenu', function(e) {
-                e.preventDefault(); // ป้องกันเมนูคลิกขวาใน iframe
-            });
-        });
-    </script>
-
+<body oncontextmenu="return false">
+    <!-- Overlay ที่ปิดการคลิกขวา -->
+    <div class="overlay"></div>
     <iframe src="https://script.google.com/macros/s/AKfycbzdygdgnavLHCLOS38TgvSKLfyFFXVtWJHrfis74WF7jDf1rLUX-vWWrVofH9hXfeV4zw/exec"></iframe>
 </body>
 </html>
