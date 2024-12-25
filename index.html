@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รายงานผลlab</title>
+    <title>รายงานผล Lab</title>
     <style>
-        iframe {
+        .responsive-iframe {
+            position: relative;
             width: 100%;
-            height: 100vh;
+            height: 0;
+            padding-bottom: 56.25%; /* อัตราส่วน 16:9 */
+        }
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
         }
     </style>
-   </head>
+</head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbzdygdgnavLHCLOS38TgvSKLfyFFXVtWJHrfis74WF7jDf1rLUX-vWWrVofH9hXfeV4zw/exec"></iframe>
+    <div class="responsive-iframe">
+        <iframe src="https://script.google.com/macros/s/AKfycbzdygdgnavLHCLOS38TgvSKLfyFFXVtWJHrfis74WF7jDf1rLUX-vWWrVofH9hXfeV4zw/exec"></iframe>
+    </div>
 </body>
 </html>
